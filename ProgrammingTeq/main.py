@@ -42,7 +42,12 @@ def editContact(list):
     for i in range(0, len(list)):
         print(i, list[i])
     print(len(list), "Exit")
-    num_of_selected = int(input())
+    num_of_selected = input()
+    try:
+        num_of_selected = int(num_of_selected)
+    except ValueError:
+        print("Enter correct number")
+        return
     if num_of_selected == len(list):
         return
     print(list[num_of_selected])
